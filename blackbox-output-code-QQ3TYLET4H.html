@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DG Architecture and Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-small">
+                <img src="logo.png" alt="DG Architecture and Design Logo" onerror="this.style.display='none'; this.nextSibling.style.display='block';"><span>DG Architecture</span>
+            </div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <div class="logo-large">
+                <img src="logo.png" alt="DG Architecture and Design Logo" onerror="this.style.display='none'; this.nextSibling.style.display='block';"><span>DG Architecture and Design</span>
+            </div>
+            <h1>Selamat Datang di DG Architecture and Design</h1>
+            <p>Kami menyediakan layanan desain arsitektur dan interior yang berkualitas tinggi.</p>
+        </div>
+    </section>
+
+    <section id="layanan">
+        <h2>Layanan Kami</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Desain Interior</h3>
+                <p>Desain interior yang fungsional dan estetis untuk rumah atau kantor Anda.</p>
+            </div>
+            <div class="service">
+                <h3>Desain Eksterior</h3>
+                <p>Desain eksterior bangunan yang menarik dan sesuai dengan lingkungan.</p>
+            </div>
+            <div class="service">
+                <h3>Custom Kitchen Set</h3>
+                <p>Kitchen set custom yang dirancang khusus sesuai kebutuhan Anda.</p>
+            </div>
+        </div>
+        <p class="note">Harga dapat berubah tergantung tingkat kesulitan & model bangunan.</p>
+    </section>
+
+    <section id="portofolio">
+        <h2>Portofolio</h2>
+        <p>Portofolio kami akan ditampilkan di sini. (Placeholder - edit konten ini dengan mudah)</p>
+        <!-- Tambahkan gambar atau deskripsi portofolio di sini -->
+    </section>
+
+    <section id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>DG Architecture and Design adalah perusahaan yang berfokus pada desain arsitektur dan interior berkualitas. (Placeholder - edit konten ini dengan mudah)</p>
+    </section>
+
+    <section id="kontak">
+        <h2>Kontak & Pesan</h2>
+        <form id="orderForm">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" required>
+            
+            <label for="whatsapp">Nomor WhatsApp:</label>
+            <input type="tel" id="whatsapp" required>
+            
+            <label for="layanan">Jenis Layanan:</label>
+            <select id="layanan" required>
+                <option value="">Pilih Layanan</option>
+                <option value="Desain Interior">Desain Interior</option>
+                <option value="Desain Eksterior">Desain Eksterior</option>
+                <option value="Custom Kitchen Set">Custom Kitchen Set</option>
+            </select>
+            
+            <label for="catatan">Catatan:</label>
+            <textarea id="catatan"></textarea>
+            
+            <button type="submit">Order</button>
+        </form>
+        <div id="notification" style="display: none;"></div>
+    </section>
+
+    <section id="testimoni">
+        <h2>Testimoni</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Layanan yang luar biasa! Desain interior rumah saya jadi lebih indah." - Klien A (Placeholder - edit dengan mudah)</p>
+            </div>
+            <div class="testimonial">
+                <p>"Custom kitchen set sesuai harapan. Terima kasih DG Architecture!" - Klien B (Placeholder - edit dengan mudah)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 DG Architecture and Design. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

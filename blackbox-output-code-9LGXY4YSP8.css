@@ -1,0 +1,193 @@
+/* Reset dan font dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Abu terang 60% */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header dan Navbar */
+header {
+    background-color: #ffffff; /* Putih 40% */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-small img, .logo-large img {
+    height: 50px;
+}
+
+.logo-small span, .logo-large span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Section Home */
+#home {
+    padding: 100px 20px 50px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.logo-large img {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.logo-large span {
+    font-size: 3em;
+    display: block;
+}
+
+/* Section umum */
+section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Layanan */
+.services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.note {
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Form Kontak */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Testimoni */
+.testimonials {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    width: 45%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .services, .testimonials {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service, .testimonial {
+        width: 80%;
+    }
+    
+    .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #ffffff;
+        display: none;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    
+    nav {
+        justify-content: space-between;
+    }
+    
+    /* Tambahkan toggle menu untuk mobile jika diperlukan, tapi sederhana dulu */
+}
