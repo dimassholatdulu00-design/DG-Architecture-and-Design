@@ -1,0 +1,1 @@
+console.log('DG Architecture script loaded');
