@@ -1,31 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pemesanan – DG Architecture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+    <!-- FONT COMFORTAA -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
 
-<div class="navbar">
-  <div class="logo"><img src="logo.png"></div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="portofolio.html">Portofolio</a>
-    <a href="layanan.html">Layanan</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="pemesanan.html">Pemesanan</a>
-  </div>
+    <!-- STYLE -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- SCRIPT -->
+    <script src="script.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Comfortaa', sans-serif;
+            padding: 20px;
+        }
+        h2 { text-align: center; margin-bottom: 25px; }
+        .form-box {
+            max-width: 550px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+        }
+        label { font-weight: 700; margin-top: 12px; display: block; }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+        .service-grid, .package-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .service-card, .package-card {
+            padding: 12px;
+            background: #f3f3f3;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.25s;
+            border: 2px solid transparent;
+        }
+        .service-card.selected, 
+        .package-card.selected {
+            border-color: #222;
+            background: #ddd;
+        }
+        .btn-box { text-align: center; margin-top: 25px; }
+        button {
+            padding: 12px 25px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<h2>Form Pemesanan</h2>
+
+<div class="form-box">
+
+    <label>Nama :</label>
+    <input type="text" id="nama" placeholder="Nama lengkap">
+
+    <label>Nomor WhatsApp :</label>
+    <input type="number" id="wa" placeholder="Contoh: 628xxx">
+
+    <label>Pilih Layanan :</label>
+    <input type="hidden" id="layanan">
+
+    <div class="service-grid">
+        <div class="service-card" onclick="selectService(this)" data-service="Desain Eksterior">
+            Eksterior
+        </div>
+        <div class="service-card" onclick="selectService(this)" data-service="Desain Interior">
+            Interior
+        </div>
+        <div class="service-card" onclick="selectService(this)" data-service="Custom Kitchen Set">
+            Kitchen Set
+        </div>
+    </div>
+
+    <label>Pilih Paket :</label>
+    <input type="hidden" id="package">
+
+    <div class="package-grid">
+        <div class="package-card" onclick="document.getElementById('package').value='Normal'; selectPackage(this)">
+            Normal
+        </div>
+        <div class="package-card" onclick="document.getElementById('package').value='Reguler'; selectPackage(this)">
+            Reguler
+        </div>
+        <div class="package-card" onclick="document.getElementById('package').value='Premium'; selectPackage(this)">
+            Premium
+        </div>
+    </div>
+
+    <label>Tambahan biaya (opsional):</label>
+    <input type="number" id="tambahan" value="0">
+
+    <div class="btn-box">
+        <button onclick="toSummary()">Lanjutkan</button>
+    </div>
+
 </div>
 
-<div class="container">
-<h2>Pemesanan</h2>
-<p>Silakan isi data di bawah ini:</p>
-<form action="#">
-  <label>Nama:</label><input type="text"><br><br>
-  <label>Nomor WA:</label><input type="text"><br><br>
-  <label>Pilih Layanan:</label>
-  <select>
-    <option>Desain Eksterior</option>
-    <option>Desain Interior</option>
-    <option>Custom Kitchen Set</option>
-  </select>
-</form>
-</div>
-<div class="footer">© DG Architecture & Design</div>
-</body></html>
+<script>
+    function selectPackage(el){
+        document.querySelectorAll(".package-card").forEach(e => e.classList.remove("selected"));
+        el.classList.add("selected");
+    }
+</script>
+
+</body>
+</html>
