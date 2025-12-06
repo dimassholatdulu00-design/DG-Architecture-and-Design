@@ -1,22 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DG Architecture and Design — Testimoni</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" href="index.html"><img src="img/logo.png" alt="logo" class="nav-logo-img" onerror="this.onerror=null;this.src='https://placehold.co/160x60?text=DG';"></a>
 
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="tentang.html">Profil</a>
+      <a class="active" href="testimoni.html">Testimoni</a>
+      <a href="pemesanan.html">Pemesanan</a>
+    </nav>
 
-<div class="navbar">
-  <div class="logo"><img src="logo.png"></div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="portofolio.html">Portofolio</a>
-    <a href="layanan.html">Layanan</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="pemesanan.html">Pemesanan</a>
+    <button class="theme-toggle">🌙</button>
   </div>
-</div>
+</header>
 
-<div class="container">
-<h2>Testimoni</h2>
-<div class="card"><p>"Desainnya rapi dan hasil sesuai ekspetasi!"</p></div>
-<div class="card"><p>"Pelayanan cepat dan profesional."</p></div>
-</div>
-<div class="footer">© DG Architecture & Design</div>
-</body></html>
+<main class="container">
+  <section class="section" data-animate>
+    <h1 class="section-title">Testimoni Klien</h1>
+    <p class="lead">Semua testimoni diisi manual oleh admin. Tambah card di file ini untuk update.</p>
+
+    <div class="grid testi-grid">
+      <article class="testi-card">
+        <h4>Andi</h4>
+        <p class="rating">★★★★☆</p>
+        <p class="comment">Desainnya rapi dan sesuai ekspektasi. Proses cepat.</p>
+        <p class="price-note">Harga akhir: Rp400.000 (termasuk revisi)</p>
+      </article>
+
+      <article class="testi-card">
+        <h4>Siti</h4>
+        <p class="rating">★★★★★</p>
+        <p class="comment">Sangat profesional, hasil 3D render memuaskan.</p>
+        <p class="price-note">Harga akhir: Rp750.000</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> DG Architecture and Design</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
