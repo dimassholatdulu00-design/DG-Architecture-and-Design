@@ -1,28 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DG Architecture and Design — Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" href="index.html"><img src="img/logo.png" alt="logo" class="nav-logo-img" onerror="this.onerror=null;this.src='https://placehold.co/160x60?text=DG';"></a>
 
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="layanan.html">Layanan</a>
+      <a class="active" href="portofolio.html">Portofolio</a>
+      <a href="tentang.html">Profil</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a href="pemesanan.html">Pemesanan</a>
+    </nav>
 
-<div class="navbar">
-  <div class="logo"><img src="logo.png"></div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="portofolio.html">Portofolio</a>
-    <a href="layanan.html">Layanan</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="pemesanan.html">Pemesanan</a>
+    <button class="theme-toggle">🌙</button>
   </div>
-</div>
+</header>
 
-<div class="container">
-<h2>Portofolio</h2>
-<div class="grid">
-  <div class="card"><img src="interior1.jpg"><h3>Interior Minimalis</h3></div>
-  <div class="card"><img src="interior2.jpg"><h3>Interior Modern</h3></div>
-  <div class="card"><img src="exterior1.jpg"><h3>Eksterior Rumah</h3></div>
-  <div class="card"><img src="exterior2.jpg"><h3>Fasad Minimalis</h3></div>
-  <div class="card"><img src="kitchen1.jpg"><h3>Kitchen Set Premium</h3></div>
-  <div class="card"><img src="kitchen2.jpg"><h3>Kitchen Set Custom</h3></div>
-</div>
-</div>
-<div class="footer">© DG Architecture & Design</div>
-</body></html>
+<main class="container">
+  <section class="section">
+    <h1 class="section-title">Portofolio</h1>
+    <p class="lead">Contoh project — ganti gambar di folder <code>/img</code> kapan saja.</p>
+
+    <div class="grid portfolio-grid">
+      <figure class="portfolio-item"><img src="img/portfolio1.jpg" alt="Project 1" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Project+1';"><figcaption>Modern Living Room</figcaption></figure>
+      <figure class="portfolio-item"><img src="img/portfolio2.jpg" alt="Project 2" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Project+2';"><figcaption>Minimal Kitchen</figcaption></figure>
+      <figure class="portfolio-item"><img src="img/portfolio3.jpg" alt="Project 3" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Project+3';"><figcaption>Facade Design</figcaption></figure>
+      <figure class="portfolio-item"><img src="img/portfolio4.jpg" alt="Project 4" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Project+4';"><figcaption>Office Interior</figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> DG Architecture and Design</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
