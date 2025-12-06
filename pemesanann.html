@@ -1,132 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Pemesanan – DG Architecture</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- FONT COMFORTAA -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <!-- STYLE -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- SCRIPT -->
-    <script src="script.js" defer></script>
-
-    <style>
-        body {
-            font-family: 'Comfortaa', sans-serif;
-            padding: 20px;
-        }
-        h2 { text-align: center; margin-bottom: 25px; }
-        .form-box {
-            max-width: 550px;
-            margin: auto;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 14px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.08);
-        }
-        label { font-weight: 700; margin-top: 12px; display: block; }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            margin-top: 4px;
-            margin-bottom: 8px;
-        }
-        .service-grid, .package-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-top: 10px;
-        }
-        .service-card, .package-card {
-            padding: 12px;
-            background: #f3f3f3;
-            border-radius: 12px;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.25s;
-            border: 2px solid transparent;
-        }
-        .service-card.selected, 
-        .package-card.selected {
-            border-color: #222;
-            background: #ddd;
-        }
-        .btn-box { text-align: center; margin-top: 25px; }
-        button {
-            padding: 12px 25px;
-            background: black;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover { opacity: 0.8; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DG Architecture and Design — Pemesanan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" href="index.html"><img src="img/logo.png" alt="logo" class="nav-logo-img" onerror="this.onerror=null;this.src='https://placehold.co/160x60?text=DG';"></a>
 
-<h2>Form Pemesanan</h2>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="tentang.html">Profil</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a class="active" href="pemesanan.html">Pemesanan</a>
+    </nav>
 
-<div class="form-box">
+    <button class="theme-toggle">🌙</button>
+  </div>
+</header>
 
-    <label>Nama :</label>
-    <input type="text" id="nama" placeholder="Nama lengkap">
+<main class="container">
+  <section class="section" data-animate>
+    <h1 class="section-title">Pemesanan</h1>
+    <p class="lead">Pilih layanan (boleh lebih dari 1), pilih paket, isi data, lalu lihat rincian & kirim ke WhatsApp.</p>
 
-    <label>Nomor WhatsApp :</label>
-    <input type="number" id="wa" placeholder="Contoh: 628xxx">
+    <div class="order-wrap">
 
-    <label>Pilih Layanan :</label>
-    <input type="hidden" id="layanan">
+      <!-- FORM -->
+      <form id="orderForm" class="order-form" onsubmit="return false;">
+        <label>Nama:
+          <input type="text" id="name" placeholder="Nama lengkap" required>
+        </label>
 
-    <div class="service-grid">
-        <div class="service-card" onclick="selectService(this)" data-service="Desain Eksterior">
-            Eksterior
-        </div>
-        <div class="service-card" onclick="selectService(this)" data-service="Desain Interior">
-            Interior
-        </div>
-        <div class="service-card" onclick="selectService(this)" data-service="Custom Kitchen Set">
-            Kitchen Set
-        </div>
+        <label>Nomor WA:
+          <input type="tel" id="phone" placeholder="628xxxxxxxxxx" required>
+        </label>
+
+        <fieldset>
+          <legend>Pilih Layanan (boleh lebih dari 1)</legend>
+          <div class="service-select-grid">
+            <button type="button" class="service-card-select" data-service="Eksterior" aria-pressed="false">
+              <img src="img/exterior.jpg" alt="Eksterior" onerror="this.onerror=null;this.src='https://placehold.co/420x280?text=Eksterior';">
+              <div class="svc-body"><h4>Eksterior</h4><p>Fasad & luar.</p></div>
+            </button>
+
+            <button type="button" class="service-card-select" data-service="Interior" aria-pressed="false">
+              <img src="img/interior.jpg" alt="Interior" onerror="this.onerror=null;this.src='https://placehold.co/420x280?text=Interior';">
+              <div class="svc-body"><h4>Interior</h4><p>Ruang dalam & layout.</p></div>
+            </button>
+
+            <button type="button" class="service-card-select" data-service="Kitchen Set" aria-pressed="false">
+              <img src="img/kitchen.jpg" alt="Kitchen Set" onerror="this.onerror=null;this.src='https://placehold.co/420x280?text=Kitchen+Set';">
+              <div class="svc-body"><h4>Kitchen Set</h4><p>Kitchen set custom.</p></div>
+            </button>
+          </div>
+        </fieldset>
+
+        <label>Pilihan Paket:
+          <select id="package" required>
+            <option value="">-- Pilih Paket --</option>
+            <option value="Normal">Normal — Desain, Layout, Bonus render 2 view</option>
+            <option value="Reguler">Reguler — Desain, Layout, Render 3 view, 1 Video (10s)</option>
+            <option value="Premium">Premium — Desain, Layout, Render 4 view, 3 Video (10s each)</option>
+          </select>
+        </label>
+
+        <label>Keterangan Tambahan:
+          <textarea id="notes" placeholder="Contoh: ukuran ruang, referensi style, dll."></textarea>
+        </label>
+
+        <p class="price-note small">Harga dapat berubah sesuai tingkat kesulitan.</p>
+
+        <button id="buildOrder" class="cta primary" type="button">Buat Pesanan</button>
+      </form>
+
+      <!-- PACKAGES (info) -->
+      <aside class="packages">
+        <div class="pkg-card"><h4>Normal</h4><p>Desain • Layout • Render 2 view</p></div>
+        <div class="pkg-card"><h4>Reguler</h4><p>Desain • Layout • Render 3 view • 1 Video</p></div>
+        <div class="pkg-card"><h4>Premium</h4><p>Desain • Layout • Render 4 view • 3 Video</p></div>
+      </aside>
+
     </div>
+  </section>
+</main>
 
-    <label>Pilih Paket :</label>
-    <input type="hidden" id="package">
-
-    <div class="package-grid">
-        <div class="package-card" onclick="document.getElementById('package').value='Normal'; selectPackage(this)">
-            Normal
-        </div>
-        <div class="package-card" onclick="document.getElementById('package').value='Reguler'; selectPackage(this)">
-            Reguler
-        </div>
-        <div class="package-card" onclick="document.getElementById('package').value='Premium'; selectPackage(this)">
-            Premium
-        </div>
+<!-- ORDER MODAL -->
+<div id="orderModal" class="modal" aria-hidden="true">
+  <div class="modal-panel">
+    <button id="modalClose" class="modal-close" aria-label="Tutup">&times;</button>
+    <h3>Rincian Pesanan</h3>
+    <div id="orderSummary" class="order-summary"></div>
+    <div class="modal-actions">
+      <button id="confirmSend" class="btn primary">Kirim ke WhatsApp</button>
+      <button id="modalEdit" class="btn">Kembali Edit</button>
     </div>
-
-    <label>Tambahan biaya (opsional):</label>
-    <input type="number" id="tambahan" value="0">
-
-    <div class="btn-box">
-        <button onclick="toSummary()">Lanjutkan</button>
-    </div>
-
+  </div>
 </div>
 
-<script>
-    function selectPackage(el){
-        document.querySelectorAll(".package-card").forEach(e => e.classList.remove("selected"));
-        el.classList.add("selected");
-    }
-</script>
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> DG Architecture and Design</p>
+  </div>
+</footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
