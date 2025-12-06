@@ -1,25 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DG Architecture and Design — Layanan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+<header class="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" href="index.html"><img src="img/logo.png" alt="logo" class="nav-logo-img" onerror="this.onerror=null;this.src='https://placehold.co/160x60?text=DG';"></a>
 
-<div class="navbar">
-  <div class="logo"><img src="logo.png"></div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="portofolio.html">Portofolio</a>
-    <a href="layanan.html">Layanan</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="pemesanan.html">Pemesanan</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="layanan.html">Layanan</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="tentang.html">Profil</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a href="pemesanan.html">Pemesanan</a>
+    </nav>
+
+    <button class="theme-toggle">🌙</button>
   </div>
-</div>
+</header>
 
-<div class="container">
-<h2>Layanan Kami</h2>
-<div class="grid">
-  <div class="card"><img src="exterior1.jpg"><h3>Desain Eksterior</h3></div>
-  <div class="card"><img src="interior1.jpg"><h3>Desain Interior</h3></div>
-  <div class="card"><img src="kitchen1.jpg"><h3>Custom Kitchen Set</h3></div>
-</div>
-</div>
-<div class="footer">© DG Architecture & Design</div>
-</body></html>
+<main class="container">
+  <section class="section">
+    <h1 class="section-title">Layanan Kami</h1>
+    <p class="lead">Pilih layanan sesuai kebutuhan — klik "Pesan" untuk langsung ke halaman pemesanan dengan prefill.</p>
+
+    <div class="grid services-grid">
+      <article class="service-card">
+        <img src="img/exterior.jpg" alt="Eksterior" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Eksterior';">
+        <div class="service-body">
+          <h3>Eksterior</h3>
+          <p>Desain fasad, taman, dan aspek luar bangunan.</p>
+          <a href="pemesanan.html?service=Eksterior" class="card-cta">Pesan</a>
+          <p class="price">Rp350.000</p>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img src="img/interior.jpg" alt="Interior" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Interior';">
+        <div class="service-body">
+          <h3>Interior</h3>
+          <p>Desain interior fungsional dan estetis.</p>
+          <a href="pemesanan.html?service=Interior" class="card-cta">Pesan</a>
+          <p class="price">Rp300.000</p>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img src="img/kitchen.jpg" alt="Kitchen Set" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Kitchen+Set';">
+        <div class="service-body">
+          <h3>Custom Kitchen Set</h3>
+          <p>Kitchen set custom sesuai ukuran & gaya.</p>
+          <a href="pemesanan.html?service=Kitchen%20Set" class="card-cta">Pesan</a>
+          <p class="price">Rp250.000</p>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <img src="img/bundle.jpg" alt="Bundle" onerror="this.onerror=null;this.src='https://placehold.co/700x420?text=Eksterior+%2B+Interior';">
+        <div class="service-body">
+          <h3>Eksterior + Interior</h3>
+          <p>Package lengkap — tampilan luar & dalam harmonis.</p>
+          <a href="pemesanan.html?service=Eksterior%20%2B%20Interior" class="card-cta">Pesan</a>
+          <p class="price">Rp800.000</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> DG Architecture and Design</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
