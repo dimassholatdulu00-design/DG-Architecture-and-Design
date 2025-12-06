@@ -1,113 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DG Architecture and Design</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DG Architecture and Design — Home</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
+<header class="navbar">
   <div class="nav-container">
-    <div class="nav-logo">DG Architecture and Design</div>
+    <a class="nav-logo" href="index.html">
+      <img src="img/logo.png" alt="DG Logo" class="nav-logo-img"
+           onerror="this.onerror=null;this.src='https://placehold.co/160x60?text=DG+Logo';">
+    </a>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="layanan.html">Layanan</a></li>
-      <li><a href="portofolio.html">Portofolio</a></li>
-      <li><a href="tentang.html">Tentang</a></li>
-      <li><a href="testimoni.html">Testimoni</a></li>
-      <li><a href="pemesanan.html">Pemesanan</a></li>
-    </ul>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="tentang.html">Profil</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a href="pemesanan.html" class="order-link">Pemesanan</a>
+    </nav>
 
-    <button class="theme-toggle">🌙</button>
+    <button class="theme-toggle" aria-pressed="false">🌙</button>
   </div>
-</nav>
+</header>
 
 <!-- HERO -->
 <section class="hero" data-animate>
-  <div class="hero-content">
-    
-    <img src="img/logo.png"
-      alt="DG Architecture and Design"
-      class="hero-logo"
-      onerror="this.onerror=null;this.src='https://placehold.co/600x240?text=DG+Architecture+and+Design';">
+  <div class="hero-inner">
+    <div class="hero-left" data-animate>
+      <img src="img/logo.png" alt="DG Architecture and Design" class="hero-logo"
+           onerror="this.onerror=null;this.src='https://placehold.co/600x240?text=DG+Architecture+and+Design';">
+      <h1 class="hero-title">DG Architecture and Design</h1>
+      <p class="hero-sub">Jasa desain interior, eksterior, dan kitchen set profesional dengan hasil rapi, cepat, dan berkualitas.</p>
 
-    <div class="hero-buttons">
-      <a href="layanan.html" class="pill-btn">Layanan</a>
-      <a href="tentang.html" class="pill-btn">Profil</a>
-      <a href="portofolio.html" class="pill-btn">Portofolio</a>
-      <a href="testimoni.html" class="pill-btn">Testimoni</a>
-      <a href="pemesanan.html" class="pill-btn primary">Pemesanan</a>
+      <div class="hero-cta">
+        <a href="layanan.html" class="pill-btn">Layanan</a>
+        <a href="tentang.html" class="pill-btn">Profil</a>
+        <a href="portofolio.html" class="pill-btn">Portofolio</a>
+        <a href="testimoni.html" class="pill-btn">Testimoni ⭐4.9</a>
+        <a href="pemesanan.html" class="pill-btn primary">Pemesanan</a>
+      </div>
     </div>
 
+    <div class="hero-media" data-animate>
+      <img src="img/hero.jpg" alt="Interior hero" class="hero-image"
+           onerror="this.onerror=null;this.src='https://placehold.co/800x520?text=Interior+Hero';">
+    </div>
   </div>
 </section>
 
-<!-- 3 MAIN SERVICES -->
-<section class="home-services">
-  <h2 class="section-title" data-animate>Layanan Utama</h2>
-
-  <div class="services-grid">
-
-    <!-- EXTERIOR -->
-    <div class="service-card" data-animate>
-      <img src="img/exterior.jpg"
-        onerror="this.onerror=null;this.src='https://placehold.co/500x350?text=Exterior';">
-      <div class="service-info">
+<!-- SERVICES (3 cards) -->
+<section class="section services" data-animate>
+  <h2 class="section-title">Layanan Utama</h2>
+  <div class="grid services-grid">
+    <article class="service-card" data-animate>
+      <img src="img/exterior.jpg" alt="Eksterior" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Eksterior';">
+      <div class="service-body">
         <h3>Eksterior</h3>
+        <p>Desain fasad, taman & tampilan luar yang estetis dan fungsional.</p>
+        <a href="pemesanan.html?service=Eksterior" class="card-cta">Pesan</a>
       </div>
-    </div>
+    </article>
 
-    <!-- INTERIOR -->
-    <div class="service-card" data-animate>
-      <img src="img/interior.jpg"
-        onerror="this.onerror=null;this.src='https://placehold.co/500x350?text=Interior';">
-      <div class="service-info">
+    <article class="service-card" data-animate>
+      <img src="img/interior.jpg" alt="Interior" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Interior';">
+      <div class="service-body">
         <h3>Interior</h3>
+        <p>Desain ruang tamu, kamar, kantor — fungsional & estetik.</p>
+        <a href="pemesanan.html?service=Interior" class="card-cta">Pesan</a>
       </div>
-    </div>
+    </article>
 
-    <!-- KITCHEN SET -->
-    <div class="service-card" data-animate>
-      <img src="img/kitchen.jpg"
-        onerror="this.onerror=null;this.src='https://placehold.co/500x350?text=Custom+Kitchen+Set';">
-      <div class="service-info">
+    <article class="service-card" data-animate>
+      <img src="img/kitchen.jpg" alt="Kitchen Set" onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Kitchen+Set';">
+      <div class="service-body">
         <h3>Custom Kitchen Set</h3>
+        <p>Kitchen set ergonomis & custom sesuai kebutuhan.</p>
+        <a href="pemesanan.html?service=Kitchen%20Set" class="card-cta">Pesan</a>
       </div>
-    </div>
-
+    </article>
   </div>
 </section>
 
-<!-- VISI MISI -->
-<section class="visi-misi" data-animate>
+<!-- VISI & MISI -->
+<section class="section visi" data-animate>
   <h2>Visi dan Misi DG Architecture and Design</h2>
-
-  <p>
-    Menyediakan layanan desain modern dan profesional yang mampu menghadirkan pengalaman ruang yang fungsional,
-    estetis, serta selaras dengan karakter dan kebutuhan setiap klien.
-  </p>
-
-  <p>
-    Berkomitmen untuk menghasilkan karya berkualitas tinggi melalui pendekatan kreatif, efisien,
-    dan berorientasi pada detail.
-  </p>
+  <ul class="visi-list">
+    <li>Memberikan desain terbaik dan profesional</li>
+    <li>Mengedepankan kepuasan klien</li>
+    <li>Proses cepat & komunikasi mudah</li>
+  </ul>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>© <span id="year"></span> DG Architecture and Design. All rights reserved.</p>
+  <div class="container">
+    <p>© <span id="year"></span> DG Architecture and Design</p>
+  </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
