@@ -1,34 +1,113 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DG Architecture and Design</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="navbar">
-  <div class="logo"><img src="logo.png"></div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="portofolio.html">Portofolio</a>
-    <a href="layanan.html">Layanan</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="pemesanan.html">Pemesanan</a>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">DG Architecture and Design</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="testimoni.html">Testimoni</a></li>
+      <li><a href="pemesanan.html">Pemesanan</a></li>
+    </ul>
+
+    <button class="theme-toggle">🌙</button>
   </div>
-</div>
+</nav>
 
-<div class="hero">
-  <div class="inner">
-    <h1>DG Architecture & Design</h1>
-    <p>Desain Eksterior, Interior, dan Custom Kitchen Set</p>
+<!-- HERO -->
+<section class="hero" data-animate>
+  <div class="hero-content">
+    
+    <img src="img/logo.png"
+      alt="DG Architecture and Design"
+      class="hero-logo"
+      onerror="this.onerror=null;this.src='https://placehold.co/600x240?text=DG+Architecture+and+Design';">
+
+    <div class="hero-buttons">
+      <a href="layanan.html" class="pill-btn">Layanan</a>
+      <a href="tentang.html" class="pill-btn">Profil</a>
+      <a href="portofolio.html" class="pill-btn">Portofolio</a>
+      <a href="testimoni.html" class="pill-btn">Testimoni</a>
+      <a href="pemesanan.html" class="pill-btn primary">Pemesanan</a>
+    </div>
+
   </div>
-</div>
+</section>
 
-<div class="container">
-  <h2>Selamat Datang</h2>
-  <p>Kami menyediakan layanan desain profesional untuk rumah minimalis, interior modern, dan custom furniture.</p>
-</div>
+<!-- 3 MAIN SERVICES -->
+<section class="home-services">
+  <h2 class="section-title" data-animate>Layanan Utama</h2>
 
-<div class="footer">© DG Architecture & Design</div>
+  <div class="services-grid">
+
+    <!-- EXTERIOR -->
+    <div class="service-card" data-animate>
+      <img src="img/exterior.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/500x350?text=Exterior';">
+      <div class="service-info">
+        <h3>Eksterior</h3>
+      </div>
+    </div>
+
+    <!-- INTERIOR -->
+    <div class="service-card" data-animate>
+      <img src="img/interior.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/500x350?text=Interior';">
+      <div class="service-info">
+        <h3>Interior</h3>
+      </div>
+    </div>
+
+    <!-- KITCHEN SET -->
+    <div class="service-card" data-animate>
+      <img src="img/kitchen.jpg"
+        onerror="this.onerror=null;this.src='https://placehold.co/500x350?text=Custom+Kitchen+Set';">
+      <div class="service-info">
+        <h3>Custom Kitchen Set</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VISI MISI -->
+<section class="visi-misi" data-animate>
+  <h2>Visi dan Misi DG Architecture and Design</h2>
+
+  <p>
+    Menyediakan layanan desain modern dan profesional yang mampu menghadirkan pengalaman ruang yang fungsional,
+    estetis, serta selaras dengan karakter dan kebutuhan setiap klien.
+  </p>
+
+  <p>
+    Berkomitmen untuk menghasilkan karya berkualitas tinggi melalui pendekatan kreatif, efisien,
+    dan berorientasi pada detail.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© <span id="year"></span> DG Architecture and Design. All rights reserved.</p>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
