@@ -1,21 +1,60 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DG Architecture and Design — Profil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container">
+    <a class="nav-logo" href="index.html"><img src="img/logo.png" alt="logo" class="nav-logo-img" onerror="this.onerror=null;this.src='https://placehold.co/160x60?text=DG';"></a>
 
-<html><head><link rel="stylesheet" href="styles.css"></head><body>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a class="active" href="tentang.html">Profil</a>
+      <a href="testimoni.html">Testimoni</a>
+      <a href="pemesanan.html">Pemesanan</a>
+    </nav>
 
-<div class="navbar">
-  <div class="logo"><img src="logo.png"></div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="portofolio.html">Portofolio</a>
-    <a href="layanan.html">Layanan</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="testimoni.html">Testimoni</a>
-    <a href="pemesanan.html">Pemesanan</a>
+    <button class="theme-toggle">🌙</button>
   </div>
-</div>
+</header>
 
-<div class="container">
-<h2>Tentang Kami</h2>
-<p>Kami adalah tim desainer yang berfokus pada kualitas, estetika, dan fungsionalitas dalam setiap project yang dikerjakan.</p>
-</div>
-<div class="footer">© DG Architecture & Design</div>
-</body></html>
+<main class="container">
+  <section class="section about" data-animate>
+    <h1 class="section-title">Tentang DG Architecture and Design</h1>
+
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="img/profile.jpg" alt="Profile" onerror="this.onerror=null;this.src='https://placehold.co/400x400?text=Profile';">
+      </div>
+      <div class="about-text">
+        <h3>DG Architecture and Design</h3>
+        <p>Saya adalah desainer yang berfokus pada interior, eksterior, dan 3D render. Berpengalaman dalam proyek residensial dan komersial dengan pendekatan minimalis dan fungsional.</p>
+
+        <h4>Keahlian</h4>
+        <ul>
+          <li>Desain interior & eksterior</li>
+          <li>Kitchen set custom</li>
+          <li>3D rendering & visualisasi</li>
+          <li>Layout & space planning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© <span id="year"></span> DG Architecture and Design</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
