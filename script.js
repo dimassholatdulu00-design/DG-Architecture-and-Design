@@ -3,16 +3,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ================================
-     YEAR AUTO
-  =================================*/
+  /* YEAR AUTO */
   document.querySelectorAll('[id^="year"]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
 
-  /* ================================
-     THEME TOGGLE + SAVE
-  =================================*/
+  /* THEME TOGGLE + SAVE */
   const themeBtns = document.querySelectorAll('.theme-toggle');
   const savedTheme = localStorage.getItem('dg-theme');
 
@@ -32,10 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.textContent = document.body.classList.contains('light') ? "🌤️" : "🌙";
   });
 
-
-  /* ================================
-     SIMPLE AOS (IntersectionObserver)
-  =================================*/
+  /* AOS (IntersectionObserver) */
   const aos = document.querySelectorAll('[data-animate]');
 
   if ('IntersectionObserver' in window && aos.length) {
@@ -53,10 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     aos.forEach(el => el.classList.add('is-visible'));
   }
 
-
-  /* ================================
-     PREFILL LAYANAN (dari index → pemesanan)
-  =================================*/
+  /* PREFILL SERVICE (index -> pemesanan) */
   const params = new URLSearchParams(location.search);
   const prefillService = params.get("service");
 
@@ -64,12 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.setItem("dg-prefill-service", prefillService);
   }
 
-
-  /* ================================
-     PEMESANAN PAGE LOGIC
-  =================================*/
-  
-  // multi-select layanan (eksterior, interior, kitchen set)
+  /* PEMESANAN PAGE LOGIC */
   const serviceButtons = document.querySelectorAll(".service-card-select");
   const selectedServices = new Set();
 
@@ -88,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // prefill bila ada
+  // prefill selection from session
   const stored = sessionStorage.getItem("dg-prefill-service");
   if (stored) {
     serviceButtons.forEach(b => {
@@ -99,10 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  /* ================================
-     BUILD ORDER (Modal)
-  =================================*/
+  /* BUILD ORDER (modal) */
   const buildBtn = document.getElementById("buildOrder");
   const modal = document.getElementById("orderModal");
   const summary = document.getElementById("orderSummary");
@@ -111,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (buildBtn) {
     buildBtn.addEventListener("click", () => {
-
       const name = (document.getElementById("name") || {}).value?.trim() || "";
       const phoneRaw = (document.getElementById("phone") || {}).value?.trim() || "";
       const pack = (document.getElementById("package") || {}).value || "";
@@ -123,8 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!services.length) return alert("Pilih minimal 1 pelayanan");
       if (!pack) return alert("Pilih paket terlebih dahulu");
 
-
-      // sanitize WA
       let phone = phoneRaw.replace(/\D/g, "");
       if (phone.startsWith("0")) phone = "62" + phone.slice(1);
 
@@ -135,13 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><strong>Paket:</strong> ${escapeHtml(pack)}</p>
         <p><strong>Keterangan:</strong> ${escapeHtml(notes)}</p>
       `;
-
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     });
   }
 
-  // close modal
   if (closeModal) {
     closeModal.addEventListener("click", () => {
       modal.setAttribute("aria-hidden", "true");
@@ -158,10 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  /* ================================
-     SEND TO WHATSAPP
-  =================================*/
+  /* SEND TO WHATSAPP */
   if (confirmSend) {
     confirmSend.addEventListener("click", () => {
       const name = (document.getElementById("name") || {}).value?.trim() || "-";
@@ -170,11 +144,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const notes = (document.getElementById("notes") || {}).value?.trim() || "-";
       const services = Array.from(selectedServices);
 
-      // sanitize
       phone = phone.replace(/\D/g, "");
       if (phone.startsWith("0")) phone = "62" + phone.slice(1);
 
-      const admin = "6287755103235"; // NOMER ADMIN KAMU
+      const admin = "6287755103235";
 
       const message =
         `Halo kak, saya ingin memesan jasa desain.%0A%0A` +
@@ -187,16 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const waUrl = `https://wa.me/${admin}?text=${message}`;
       window.open(waUrl, "_blank");
 
-      // close modal
       modal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
     });
   }
 
-
-  /* ================================
-     ESCAPE HTML SAFE
-  =================================*/
+  /* ESCAPE HTML */
   function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, m => ({
       "&": "&amp;",
